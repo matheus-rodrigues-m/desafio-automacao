@@ -1,6 +1,5 @@
 from playwright.sync_api import sync_playwright
 import csv
-import time
 
 def run():
     with sync_playwright() as playw:
@@ -35,10 +34,7 @@ def run():
         # Depois vou melhorar para pegar todos do carrossel
         
         game_links = []
-        count = 0
         for card in cards:
-            if count >= 5: break # Teste de 5 cards
-            
             # Precisamos do link (href) de cada item
             # É o que vem depois do endereço principal do site
             href = card.get_attribute("href")
@@ -46,9 +42,9 @@ def run():
             # Evitar duplicatas ou links vazios
             if href and href not in game_links:
                 full_link = f"https://www.comparajogos.com.br{href}"
-                game_links.append(full_link)
-                print(f"🎮 Encontrado: {full_link}")
-                count += 1
+                if full_link not in game_links:
+                    game_links.append(full_link)
+                    print(f"   🎮 Encontrado: {full_link}")
 
         print(f"✅ Total de jogos identificados: {len(game_links)}")
         
@@ -122,7 +118,7 @@ def run():
                     })
                 
                 # Pausa entre requisições
-                time.sleep(2)
+                # time.sleep(2)
 
             except Exception as e:
                 print(f"   ❌ Erro neste link: {e}")
