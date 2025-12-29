@@ -205,7 +205,9 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
-temp_links.txt
 
 *.csv
 *.json
+temp_links.txt
+*scrapper_test.py*
+*games_data.csv*
