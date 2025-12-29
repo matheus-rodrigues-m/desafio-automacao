@@ -20,6 +20,11 @@ O sistema opera em três etapas principais:
 
 ## 📸 Demonstração
 
+### Vídeo Demonstrativo
+**[Clique Aqui para Acessar o Vídeo Demonstrativo](https://drive.google.com/file/d/1OXa97NbMjoEnImsWswYo3AmcCVF55zf2/view?usp=sharing)**
+Obs.: Funcionamento prático começa em 08:30min
+
+
 ### Visão Geral do Dashboard
 ![Visão Geral](assets/dashboard_overview.png)
 
