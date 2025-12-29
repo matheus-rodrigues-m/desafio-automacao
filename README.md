@@ -94,6 +94,8 @@ python -m venv venv
 # No Linux/Mac:
 # python3 -m venv venv
 # source venv/bin/activate
+# Dependendo do terminal:
+# source venv/Scripts/activate
 ```
 ```bash
 # 3. Instale as dependências do projeto

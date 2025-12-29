@@ -3,9 +3,21 @@ import csv
 
 def run():
     with sync_playwright() as playw:
-        # 1. Iniciando o navegador (headless=False para ver a tela e ver se vai funcionar bem)
+        # 1. Iniciando o navegador (headless=False por padrão - Ver bot atuando)
+        run_mode_input = ""
+        run_mode = True
+        while run_mode_input != "headless" and run_mode_input != "headful" and run_mode_input != "1" and run_mode_input != "2":
+            print("Selecione o modo: headless (1) / headful (2)")
+            run_mode_input = input()
+            if run_mode_input == "headless" or run_mode_input == "1":
+                run_mode = True
+            elif run_mode_input == "headful" or run_mode_input == "2":
+                run_mode = False
+            else:
+                print("❌ Valor inserido inválido\n")
+
         print("🚀 Iniciando o browser...")
-        browser = playw.firefox.launch(headless=True, slow_mo=500) # slow_mo pra ver melhor
+        browser = playw.firefox.launch(headless=run_mode, slow_mo=500) # slow_mo pra ver melhor
         page = browser.new_page()
 
         # 2. Acessar a home (goto)
